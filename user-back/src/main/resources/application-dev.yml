@@ -1,0 +1,33 @@
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: localhost
+    port: 25
+    protocol: smtp
+  jpa:
+    properties:
+      hibernate.format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug 
+        
+        
+#App Specific configuration
+app:
+  expiration-hours: 24
+  default-sender: cross-solutions.vn
+  activation-url: http://localhost:4200/#/activate/
+  jwt:  
+    header: Authorization
+    secret: mySecret
+    expiration: 604800
+    route-authentication-path: /auth/login
+    route-authentication-refresh: /auth/refresh
+    
